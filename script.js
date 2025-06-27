@@ -60,15 +60,60 @@ tabButtons.forEach(button => {
   });
 });
 
-// Changes the Twitter icon with 50% probability
+// Twitter random icon
 const twitterIcon = document.getElementById("icon-twitter");
-
 const twitterGifs = [
-  "assets/iconsOrLogos/gif_twitterIcon.gif",       // Default
-  "assets/iconsOrLogos/gif_twitter2Icon.gif"     // Alternative Logo
+  "assets/iconsOrLogos/gif_twitterIcon.gif",
+  "assets/iconsOrLogos/gif_twitter2Icon.gif"
 ];
 
 if (twitterIcon) {
   const randomIndex = Math.random() < 0.5 ? 0 : 1;
   twitterIcon.src = twitterGifs[randomIndex];
 }
+
+// Overlay (only for mobile when loading)
+const overlay = document.getElementById("gif-overlay");
+const closeOverlayBtn = document.getElementById("close-overlay");
+
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function showOverlay(immediate = false) {
+  overlay.classList.remove("hidden");
+  if (immediate) {
+    overlay.style.animation = "none";
+    overlay.style.opacity = "1";
+  } else {
+    overlay.style.animation = "";
+    overlay.style.opacity = "1";
+  }
+}
+
+// On startup: only show overlay if mobile
+window.addEventListener("DOMContentLoaded", () => {
+  if (isMobile()) {
+    showOverlay(true);
+  }
+});
+
+// Close overlay with fade
+closeOverlayBtn.addEventListener("click", () => {
+  overlay.style.transition = "opacity 0.4s ease";
+  overlay.style.opacity = "0";
+  setTimeout(() => {
+    overlay.classList.add("hidden");
+    overlay.style.transition = "";
+    overlay.style.opacity = "1";
+    overlay.style.animation = "";
+  }, 400);
+});
+
+// Solid blue background for overlay
+overlay.style.setProperty('--overlay-bg-color', '#0068e8');
+
+//for testing only
+//function isMobile() {
+//  return true;
+//}

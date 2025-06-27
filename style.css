@@ -46,9 +46,8 @@ h1,
 }
 
 /* Items */
-
 img {
-  width: 900px;
+  width: 350px; /* use 900px to use the original gif */
   image-rendering: pixelated;
 }
 
@@ -90,7 +89,6 @@ h1 {
 }
 
 /* social networks */
-
 .social-links {
   margin-top: 15px;
   display: flex;
@@ -113,7 +111,6 @@ h1 {
 }
 
 /* TABS */
-
 .section-tabs {
   margin-top: 40px;
   display: flex;
@@ -137,7 +134,6 @@ h1 {
 }
 
 /* content by sections */
-
 .section-content {
   margin-top: 30px;
   max-width: 90%;
@@ -156,7 +152,6 @@ h1 {
 }
 
 /* List of images/games */
-
 .image-list {
   margin-top: 10px;
   display: flex;
@@ -191,8 +186,7 @@ h1 {
   pointer-events: none;
 }
 
-/* Box text (projects) */
-
+/* Box Text (Projects) */
 .caption {
   font-size: 20px;
   color: #fff;
@@ -209,4 +203,56 @@ h1 {
   vertical-align: middle;
   margin-right: 6px;
   image-rendering: pixelated;
+}
+
+/* Mobile Warning */
+#gif-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--overlay-bg-color, #000000); /* color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.4s ease;
+}
+
+#gif-overlay.hidden {
+  display: none;
+}
+
+.overlay-gif {
+  width: 70%;
+  max-width: 400px;
+  image-rendering: pixelated;
+  margin-bottom: 20px;
+}
+
+#close-overlay {
+  font-family: 'fnt_mc';
+  font-size: 18px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+#close-overlay:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
