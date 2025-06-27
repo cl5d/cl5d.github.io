@@ -1,0 +1,212 @@
+@font-face {
+  font-family: 'fnt_mc';
+  src: url('assets/fonts/Minecraft.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'fnt_m6x11plus';
+  src: url('assets/fonts/m6x11plus.ttf') format('truetype');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: 'fnt_m6x11plus', monospace;
+  color: white;
+  background: none;
+  overflow-x: hidden;
+  position: relative;
+  text-align: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('assets/images/backgrounds/bg_test.png');
+  background-repeat: repeat;
+  background-position: center center;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+body.change-bg::before {
+  opacity: 0;
+}
+
+body > img,
+h1,
+.section-tabs,
+.social-links,
+.section-content,
+.btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Items */
+
+img {
+  width: 900px;
+  image-rendering: pixelated;
+}
+
+h1 {
+  font-size: 48px; /* enlarged for better readability */
+  margin: 12px 0 10px 0;
+  text-shadow: 5px 5px 0 #000;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.link-gmk {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.link-gmk::selection {
+  background-color: #F8D0D0;
+  color: black;
+}
+
+.btn {
+  margin: 50px auto 60px auto; /* separation above and below */
+  background: #000;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  font-family: 'fnt_mc';
+  text-decoration: none;
+  transition: 0.2s;
+  display: inline-block;
+}
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* social networks */
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  font-family: 'fnt_mc';
+  font-size: 20px;
+  justify-content: center;
+  max-width: 90%;
+}
+.social-links a {
+  color: #F8D0D0;
+  text-decoration: none;
+  transition: 0.3s;
+  user-select: none;
+}
+.social-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* TABS */
+
+.section-tabs {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: transparent;
+  border: 2px solid #F8D0D0;
+  color: #F8D0D0;
+  font-family: 'fnt_mc';
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tab-btn:hover,
+.tab-btn.active {
+  background: #F8D0D0;
+  color: black;
+}
+
+/* content by sections */
+
+.section-content {
+  margin-top: 30px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* to hide */
+.section-content.hidden {
+  display: none;
+}
+
+/* Text in drawings and about sections with larger size */
+#drawings p,
+#about p {
+  font-size: 25px;
+}
+
+/* List of images/games */
+
+.image-list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.image-list a {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+.image-list a:hover,
+.image-list a:focus {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #F8D0D0;
+  z-index: 10;
+  outline: none;
+}
+
+.image-list img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Box text (projects) */
+
+.caption {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 8px;
+  font-family: 'fnt_m6x11plus', monospace;
+}
+.caption .year {
+  font-size: 17px;
+  color: #ccc;
+}
+.icon-gif {
+  height: 3em; /* set to 2, 3 or 4 */
+  width: auto; /* ← maintains proportions */
+  vertical-align: middle;
+  margin-right: 6px;
+  image-rendering: pixelated;
+}
