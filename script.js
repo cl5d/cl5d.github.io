@@ -91,15 +91,31 @@ function showOverlay(immediate = false) {
   }
 }
 
-// On startup: only show overlay if mobile
+// Sonidos aleatorios para el botón
+const sounds = [
+  "assets/sfx/sfx_tacoBellBong.mp3",
+  "assets/sfx/sfx_winXPError.mp3",
+  "assets/sfx/sfx_explosionDeltarune.mp3",
+  // Puedes añadir más sonidos aquí
+];
+
+function playRandomSound() {
+  const index = Math.floor(Math.random() * sounds.length);
+  const sound = new Audio(sounds[index]);
+  sound.play().catch(err => {
+    console.warn("Error al reproducir sonido aleatorio:", err);
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   if (isMobile()) {
     showOverlay(true);
   }
 });
 
-// Close overlay with fade
 closeOverlayBtn.addEventListener("click", () => {
+  playRandomSound();
+
   overlay.style.transition = "opacity 0.4s ease";
   overlay.style.opacity = "0";
   setTimeout(() => {
@@ -110,8 +126,9 @@ closeOverlayBtn.addEventListener("click", () => {
   }, 400);
 });
 
-// Solid blue background for overlay
+// Fondo azul sólido para overlay
 overlay.style.setProperty('--overlay-bg-color', '#0068e8');
+
 
 //for testing only
 //function isMobile() {

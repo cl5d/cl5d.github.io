@@ -91,20 +91,26 @@ h1 {
 /* social networks */
 .social-links {
   margin-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* 3 por fila */
   gap: 10px 30px;
   font-family: 'fnt_mc';
   font-size: 20px;
   justify-content: center;
   max-width: 90%;
 }
+
 .social-links a {
   color: #F8D0D0;
   text-decoration: none;
   transition: 0.3s;
   user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 .social-links a:hover {
   color: white;
   text-decoration: underline;
@@ -255,4 +261,11 @@ h1 {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Line splitting for h1 */
+.intro-title span {
+  display: block;
+  line-height: 0.2;
+  margin-bottom: 1.5px;
 }
