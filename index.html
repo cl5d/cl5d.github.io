@@ -8,79 +8,89 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <img src="assets/gifs/gif_cl5dIntro2.gif" alt="gif_Intro" />
+  <img src="assets/gifs/intro/gif_cl5dIntro2.gif" alt="gif_Intro" />
 
   <h1 class="intro-title">
-    <span>hellow.</span><br>
-    <span>i am a mini developer</span><br>
-    <span>using the GameMaker Engine.</span><br>
+    <span data-i18n="intro.line1">hellow.</span><br>
+    <span data-i18n="intro.line2">i am a mini developer</span><br>
+    <span data-i18n="intro.line3">using the GameMaker Engine.</span><br>
   </h1>
 
   <div class="social-links">
     <a href="https://cl5d.itch.io" target="_blank">
-      <img src="assets/iconsOrLogos/gif_itchIoIcon.gif" class="icon-gif" alt="Itch Icon" />
+      <img src="assets/gifs/iconsOrLogos/gif_itchIoIcon.gif" class="icon-gif" alt="Itch Icon" />
       Itch.io
     </a>
     <a href="https://gx.games/es/studios/afbf6059-f576-4e38-b2fe-603777454f2d/" target="_blank">
-      <img src="assets/iconsOrLogos/gif_gxGamesIcon.gif" class="icon-gif" alt="GX Icon" />
+      <img src="assets/gifs/iconsOrLogos/gif_gxGamesIcon.gif" class="icon-gif" alt="GX Icon" />
       GX.games
     </a>
     <a href="https://github.com/cl5d" target="_blank">
-      <img src="assets/iconsOrLogos/gif_gitHubIcon.gif" class="icon-gif" alt="GitHub Icon" />
+      <img src="assets/gifs/iconsOrLogos/gif_gitHubIcon.gif" class="icon-gif" alt="GitHub Icon" />
       GitHub
     </a>
     <a href="https://x.com/cl5fied" target="_blank">
-      <img src="assets/iconsOrLogos/gif_twitterIcon.gif" class="icon-gif" alt="Twitter Icon" id="icon-twitter" />
+      <img src="assets/gifs/iconsOrLogos/gif_twitterIcon.gif" class="icon-gif" alt="Twitter Icon" id="icon-twitter" />
       Twitter/X
     </a>
     <a href="https://bsky.app/profile/cl5fied.bsky.social" target="_blank">
-      <img src="assets/iconsOrLogos/gif_blueSkyIcon.gif" class="icon-gif" alt="BlueSky Icon" />
+      <img src="assets/gifs/iconsOrLogos/gif_blueSkyIcon.gif" class="icon-gif" alt="BlueSky Icon" />
       BlueSky
     </a>
     <a href="https://www.tumblr.com/cl5fied" target="_blank">
-      <img src="assets/iconsOrLogos/gif_tumblrIcon.gif" class="icon-gif" alt="Tumblr Icon" />
+      <img src="assets/gifs/iconsOrLogos/gif_tumblrIcon.gif" class="icon-gif" alt="Tumblr Icon" />
       Tumblr
     </a>
   </div>
 
   <div class="section-tabs">
-    <button class="tab-btn active" data-target="games">Games</button>
-    <button class="tab-btn" data-target="drawings">Drawings</button>
-    <button class="tab-btn" data-target="about">About Me</button>
+    <button class="tab-btn active" data-target="games" data-i18n="tabs.games">Games</button>
+    <button class="tab-btn" data-target="drawings" data-i18n="tabs.drawings">Drawings</button>
+    <button class="tab-btn" data-target="about" data-i18n="tabs.about">About Me</button>
   </div>
 
   <div class="section-content" id="games">
     <div class="image-list">
-      <a href="https://www.youtube.com/watch?v=22z31vdqnWI" target="_blank">
-        <img src="assets/gifs/gif_woorking.gif" alt="Proyect1" />
-        <p class="caption">cooking...<br><span class="year">????</span></p>
+      <a href="https://itch.io/jam/gmtk-2025" target="_blank">
+        <img src="assets/gifs/gif_soonJAM.gif" alt="Proyect1" />
+        <p class="caption" data-i18n="games.project1.caption">
+          soon....<br><span class="year">I don't know what to put<br> but oh well.<br> I just have to wait.</span>
+        </p>
       </a>
       <a href="https://www.youtube.com/watch?v=22z31vdqnWI" target="_blank">
         <img src="assets/gifs/gif_woorking.gif" alt="Proyect2" />
-        <p class="caption">cooking...<br><span class="year">????</span></p>
+        <p class="caption" data-i18n="games.project2.caption">
+          cooking...<br><span class="year">????</span>
+        </p>
       </a>
       <a href="https://www.youtube.com/watch?v=22z31vdqnWI" target="_blank">
         <img src="assets/gifs/gif_woorking.gif" alt="Proyect3" />
-        <p class="caption">cooking...<br><span class="year">????</span></p>
+        <p class="caption" data-i18n="games.project3.caption">
+          cooking...<br><span class="year">????</span>
+        </p>
       </a>
     </div>
   </div>
 
   <div class="section-content hidden" id="drawings">
-    <p>✨ Here are some drawings I made</p>
+    <p data-i18n="drawings.text">✨ Here are some drawings I made</p>
     <img src="assets/gifs/gif_woorking.gif" alt="Drawing 1" style="width: 300px; margin-top: 10px;" />
   </div>
 
   <div class="section-content hidden" id="about">
-    <p>Hellow👋.<br> (as I already mentioned) my name is cl5d<br> and I make games for fun.<br> using the GameMaker program<br> and my dream is to release a complete game.</p>
+    <p data-i18n="about.text">Hellow👋.<br> (as I already mentioned) my name is cl5d<br> and I make games for fun.<br> using the GameMaker program<br> and my dream is to release a complete game.</p>
   </div>
 
-  <a href="https://www.youtube.com/watch?v=hvL1339luv0" class="btn" target="_blank">click me :3</a>
+<!-- Original "click me :3" button -->
+ <a href="https://www.youtube.com/watch?v=hvL1339luv0" class="btn" target="_blank" id="click-me-btn" data-i18n="click_me">click me :3</a>
+
+ <!-- Button to change language -->
+ <a href="#" class="btn" id="language-toggle">English</a>
 
   <!-- 🔽 Overlay shown only on mobile devices at startup -->
   <div id="gif-overlay" class="hidden">
-    <img src="assets/gifs/gif_warnM1.gif" alt="gif_overlay" class="overlay-gif" />
-    <button id="close-overlay">Continue anyway</button>
+    <img src="assets/gifs/warnings/gif_warnM1.gif" alt="gif_overlay" class="overlay-gif" />
+    <button id="close-overlay" data-i18n="overlay.continue">Continue anyway</button>
   </div>
 
   <script src="script.js"></script>

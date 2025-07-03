@@ -78,7 +78,7 @@ h1 {
   border: 2px solid white;
   color: white;
   padding: 10px 20px;
-  font-family: 'fnt_mc';
+  font-family: 'fnt_m6x11plus';
   text-decoration: none;
   transition: 0.2s;
   display: inline-block;
@@ -94,7 +94,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, auto); /* 3 por fila */
   gap: 10px 30px;
-  font-family: 'fnt_mc';
+  font-family: 'fnt_m6x11plus';
   font-size: 20px;
   justify-content: center;
   max-width: 90%;
@@ -128,7 +128,7 @@ h1 {
   background: transparent;
   border: 2px solid #F8D0D0;
   color: #F8D0D0;
-  font-family: 'fnt_mc';
+  font-family: 'fnt_m6x11plus';
   padding: 8px 16px;
   cursor: pointer;
   transition: 0.3s;
@@ -239,7 +239,7 @@ h1 {
 }
 
 #close-overlay {
-  font-family: 'fnt_mc';
+  font-family: 'fnt_m6x11plus';
   font-size: 18px;
   padding: 10px 20px;
   background: black;
@@ -268,4 +268,18 @@ h1 {
   display: block;
   line-height: 0.2;
   margin-bottom: 1.5px;
+}
+
+#click-me-btn {
+  margin: 50px auto 60px auto;
+  display: inline-block;
+}
+
+#language-toggle {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10000;
+  margin: 0;
+  padding: 10px 20px;
 }
