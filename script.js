@@ -110,9 +110,9 @@ function playRandomSound() {
 const translations = {
   eng: {
     intro: {
-      line1: "hellow.",
-      line2: "i am a mini developer",
-      line3: "using the GameMaker Engine."
+      line1: "  ",
+      line2: "😺",
+      line3: "  "
     },
     tabs: {
       games: "Games",
@@ -120,7 +120,7 @@ const translations = {
       about: "About Me"
     },
     drawings: {
-      text: "✨ Here are some drawings I made"
+      text: "✨Here are some drawings I made (there are also fan arts that I made)"
     },
     about: {
       text: "Hellow👋.<br> (as I already mentioned) my name is cl5d<br> and I make games for fun.<br> using the GameMaker program<br> and my dream is to release a complete game."
@@ -143,9 +143,9 @@ const translations = {
   },
   esp: {
     intro: {
-      line1: "holas.",
-      line2: "soy un mini desarrollador",
-      line3: "usando el motor GameMaker."
+      line1: " ",
+      line2: "😺",
+      line3: " "
     },
     tabs: {
       games: "Juegos",
@@ -153,7 +153,7 @@ const translations = {
       about: "Sobre mí"
     },
     drawings: {
-      text: "✨ Aquí algunos dibujos que hice"
+      text: "✨Aquí les dejo algunos dibujos que hice (también hay fan arts que hice)"
     },
     about: {
       text: "Holasss👋.<br> (como ya mencioné) me llamo cl5d<br> y hago juegos por diversión.<br> usando el programa GameMaker<br> y mi sueño es sacar un juego completo."
@@ -163,13 +163,13 @@ const translations = {
         caption: `próximamente....<br><span class="year">No sé qué poner<br> pero bueno.<br> Hay que esperar.</span>`
       },
       project2: {
-        caption: `cocinando...<br><span class="year">????</span>`
+        caption: `trabajando...<br><span class="year">????</span>`
       },
       project3: {
-        caption: `cocinando...<br><span class="year">????</span>`
+        caption: `trabajando...<br><span class="year">????</span>`
       }
     },
-    click_me: "clickeame we :3",
+    click_me: "clickeame bro :3",
     overlay: {
       continue: "Continuar de todas formas"
     }
@@ -248,7 +248,7 @@ closeOverlayBtn.addEventListener("click", () => {
 // Solid blue background for overlay
 overlay.style.setProperty('--overlay-bg-color', '#0068e8');
 
-//for testing only
-//function isMobile() {
-//  return true;
-//}
+/*for testing only*/
+/*function isMobile() {
+  return true;
+}*/
