@@ -127,7 +127,7 @@ const translations = {
     },
     games: {
       project1: {
-        caption: `soon....<br><span class="year">I don't know what to put<br> but oh well.<br> I just have to wait.</span>`
+        caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>`
       },
       project2: {
         caption: `cooking...<br><span class="year">????</span>`
@@ -160,7 +160,7 @@ const translations = {
     },
     games: {
       project1: {
-        caption: `próximamente....<br><span class="year">No sé qué poner<br> pero bueno.<br> Hay que esperar.</span>`
+        caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>`
       },
       project2: {
         caption: `trabajando...<br><span class="year">????</span>`
