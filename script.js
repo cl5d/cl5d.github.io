@@ -1,3 +1,24 @@
+//Array with possible titles
+const possibleTitles = [
+  "cl5d hub",
+  "cl5d hub",
+  "cl5d hub",
+  "cl5d wonders why you're reading this?",
+  "cl5d hub",
+  "cl5d hub",
+  "cl5d hub"
+];
+
+//Function to choose random title and assign it
+function setRandomTitle() {
+  const randomIndex = Math.floor(Math.random() * possibleTitles.length);
+  document.title = possibleTitles[randomIndex];
+}
+
+//Run on page load
+window.addEventListener('DOMContentLoaded', setRandomTitle);
+
+//Yeah.. I know the "background scroll" isn't in use and most likely won't be used lol
 const body = document.body;
 const backgrounds = [
   "url('assets/images/backgrounds/bg_test.png')",
@@ -34,7 +55,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Remove focus from boxes
+// Remove focus from links in image-list
 document.querySelectorAll('.image-list a').forEach(link => {
   link.addEventListener('click', () => {
     link.blur();
@@ -106,82 +127,44 @@ function playRandomSound() {
   });
 }
 
-// Translations
+// Translations object (ya lo tenés en el mismo archivo)
 const translations = {
   eng: {
-    intro: {
-      line1: "  ",
-      line2: "😺",
-      line3: "  "
-    },
-    tabs: {
-      games: "Games",
-      drawings: "Drawings",
-      about: "About Me"
-    },
-    drawings: {
-      text: "✨Here are some drawings I made (there are also fan arts that I made)"
-    },
+    intro: { line1: "  ", line2: "😺", line3: "  " },
+    tabs: { games: "Games", drawings: "Drawings", about: "About Me" },
+    drawings: { text: "✨Here are some drawings I made (there are also fan arts that I made)" },
     about: {
       text: "Hellow👋.<br> (as I already mentioned) my name is cl5d<br> and I make games for fun.<br> using the GameMaker program<br> and my dream is to release a complete game."
     },
     games: {
-      project1: {
-        caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>`
-      },
-      project2: {
-        caption: `cooking...<br><span class="year">????</span>`
-      },
-      project3: {
-        caption: `cooking...<br><span class="year">????</span>`
-      }
+      project1: { caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>` },
+      project2: { caption: `cooking...<br><span class="year">????</span>` },
+      project3: { caption: `cooking...<br><span class="year">????</span>` }
     },
     click_me: "click me :3",
-    overlay: {
-      continue: "Continue anyway"
-    }
+    overlay: { continue: "Continue anyway" }
   },
   esp: {
-    intro: {
-      line1: " ",
-      line2: "😺",
-      line3: " "
-    },
-    tabs: {
-      games: "Juegos",
-      drawings: "Dibujos",
-      about: "Sobre mí"
-    },
-    drawings: {
-      text: "✨Aquí les dejo algunos dibujos que hice (también hay fan arts que hice)"
-    },
+    intro: { line1: " ", line2: "😺", line3: " " },
+    tabs: { games: "Juegos", drawings: "Dibujos", about: "Sobre mí" },
+    drawings: { text: "✨Aquí les dejo algunos dibujos que hice (también hay fan arts que hice)" },
     about: {
       text: "Holasss👋.<br> (como ya mencioné) me llamo cl5d<br> y hago juegos por diversión.<br> usando el programa GameMaker<br> y mi sueño es sacar un juego completo."
     },
     games: {
-      project1: {
-        caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>`
-      },
-      project2: {
-        caption: `trabajando...<br><span class="year">????</span>`
-      },
-      project3: {
-        caption: `trabajando...<br><span class="year">????</span>`
-      }
+      project1: { caption: `Untitled Game From<br> The GMTK Jam 25<br><span class="year">2025</span>` },
+      project2: { caption: `trabajando...<br><span class="year">????</span>` },
+      project3: { caption: `trabajando...<br><span class="year">????</span>` }
     },
     click_me: "clickeame bro :3",
-    overlay: {
-      continue: "Continuar de todas formas"
-    }
+    overlay: { continue: "Continuar de todas formas" }
   }
 };
 
-// Function to change language
+// Change language function
 function changeLanguage(lang) {
-  // Save to localStorage
   localStorage.setItem('lang', lang);
 
-  // Change text of all elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const keys = el.getAttribute('data-i18n').split('.');
     let text = translations[lang];
@@ -197,41 +180,39 @@ function changeLanguage(lang) {
     }
   });
 
-  // Change text of the "click me" button separately because it is an <a>
+  //Change the text on the "click me" button
   const clickMeBtn = document.getElementById('click-me-btn');
-  if(clickMeBtn) {
+  if (clickMeBtn) {
     clickMeBtn.textContent = translations[lang].click_me;
   }
 
-  // Change text of the overlay button
-  if(closeOverlayBtn) {
+  //Change button overlay text
+  if (closeOverlayBtn) {
     closeOverlayBtn.textContent = translations[lang].overlay.continue;
   }
 
-  // Change button text to display the other language
+  //Change toggle button text to another language
   const toggleBtn = document.getElementById('language-toggle');
   toggleBtn.textContent = (lang === 'eng') ? 'English' : 'Español';
 }
 
-// Button to change language
+//Button to change language
 const toggleBtn = document.getElementById('language-toggle');
-toggleBtn.addEventListener('click', (e) => {
+toggleBtn.addEventListener('click', e => {
   e.preventDefault();
   const currentLang = localStorage.getItem('lang') || 'eng';
-  const newLang = (currentLang === 'eng') ? 'esp' : 'eng';
+  const newLang = currentLang === 'eng' ? 'esp' : 'eng';
   changeLanguage(newLang);
 });
 
-// Load language at startup (default English)
+//When loading DOM
 window.addEventListener("DOMContentLoaded", () => {
-  if (isMobile()) {
-    showOverlay(true);
-  }
+  if (isMobile()) showOverlay(true);
   const savedLang = localStorage.getItem('lang') || 'eng';
   changeLanguage(savedLang);
 });
 
-// Close overlay button
+//Close overlay
 closeOverlayBtn.addEventListener("click", () => {
   playRandomSound();
 
@@ -245,7 +226,7 @@ closeOverlayBtn.addEventListener("click", () => {
   }, 400);
 });
 
-// Solid blue background for overlay
+//Blue background for overlay
 overlay.style.setProperty('--overlay-bg-color', '#0068e8');
 
 /*for testing only*/

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="eng">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>cl5d hub</title>
-  <link rel="icon" href="gif_icon.gif" type="image/png" />
+  <link rel="icon" href="icons/gif_icon.gif" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Hide native cursor on body and interactive elements */
+    body, a, button, .btn {
+      cursor: none !important;
+    }
+
+    /* Custom cursor */
+    #custom-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 32px; /* Adjust to the size of your gif */
+      height: 32px;
+      pointer-events: none;
+      z-index: 9999;
+      background: url('assets/gifs/cursors/gif_idle_cursor.gif') no-repeat center center;
+      background-size: contain;
+      transition: background 0s ease;
+      transform: translate3d(0, 0, 0);
+    }
+</style>
 </head>
 <body>
   <img src="assets/gifs/intro/gif_cl5dIntro2.gif" alt="gif_Intro" />
@@ -13,7 +33,6 @@
   <h1 class="intro-title">
     <span data-i18n="intro.line1"></span><br>
     <span data-i18n="intro.line2">😺</span><br>
-    <!--<span data-i18n="intro.line3"></span><br>-->
   </h1>
 
   <div class="social-links">
@@ -45,16 +64,7 @@
       <img src="assets/gifs/iconsOrLogos/gif_soundCloud.gif" class="icon-gif" alt="Tumblr Icon" />
       SoundCloud
     </a>
-<!--   <a href="https://cl5d.bandcamp.com" target="_blank">
-      <img src="assets/gifs/iconsOrLogos/gif_gitHubIcon.gif" class="icon-gif" alt="GitHub Icon" />
-      BandCamp
-    </a>
-      <a href="https://www.patreon.com/cl5d" target="_blank">
-      <img src="assets/gifs/iconsOrLogos/gif_tumblrIcon.gif" class="icon-gif" alt="Tumblr Icon" />
-      Patreon
-    </a>-->
   </div>
- <!--Consider following me on my social networks :D-->
 
   <div class="section-tabs">
     <button class="tab-btn active" data-target="games" data-i18n="tabs.games">Games</button>
@@ -95,11 +105,11 @@
     <p data-i18n="about.text">Hellow👋.<br> (as I already mentioned) my name is cl5d<br> and I make games for fun.<br> using the GameMaker program<br> and my dream is to release a complete game.</p>
   </div>
 
-<!-- Original "click me :3" button -->
- <a href="https://www.youtube.com/watch?v=hvL1339luv0" class="btn" target="_blank" id="click-me-btn" data-i18n="click_me">click me :3</a>
+  <!-- Original "click me :3" button -->
+  <a href="https://www.youtube.com/watch?v=hvL1339luv0" class="btn" target="_blank" id="click-me-btn" data-i18n="click_me">click me :3</a>
 
- <!-- Button to change language -->
- <a href="#" class="btn" id="language-toggle">English</a>
+  <!-- Button to change language -->
+  <a href="#" class="btn" id="language-toggle">English</a>
 
   <!-- 🔽 Overlay shown only on mobile devices at startup -->
   <div id="gif-overlay" class="hidden">
@@ -107,6 +117,33 @@
     <button id="close-overlay" data-i18n="overlay.continue">Continue anyway</button>
   </div>
 
+  <!-- Text at the bottom left -->
+  <div class="bottom-left-text">
+    <p data-i18n="footer.line1">website made by: cl5d</p>
+    <p data-i18n="footer.line2">font by: <a href="https://managore.itch.io" target="_blank">Daniel Linssen</a></p>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('custom-cursor');
+
+    window.addEventListener('mousemove', e => {
+      const offsetX = 16;
+      const offsetY = 16;
+      cursor.style.transform = `translate3d(${e.clientX - offsetX}px, ${e.clientY - offsetY}px, 0)`;
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        cursor.style.backgroundImage = "url('assets/gifs/cursors/gif_hover_cursor.gif')";
+      });
+      link.addEventListener('mouseleave', () => {
+        cursor.style.backgroundImage = "url('assets/gifs/cursors/gif_idle_cursor.gif')";
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

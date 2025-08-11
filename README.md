@@ -1,5 +1,6 @@
-This website is under development (as of today, June 26, 2025), so it may be missing things or simply "placeholders," and especially bugs.
+https://cl5d.github.io
 
-Regards, cl5d.
+This website is in demo mode, I think. I honestly couldn't tell if it's a demo or the final site, lol.
+Regards, cl5d
 
-P.S.: I have no problem with you viewing the website or using the code to create your own.
+PS: You can use the code from the website to make your own (I don't know why you would do that, but you can just give credits)

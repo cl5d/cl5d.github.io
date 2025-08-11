@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'fnt_mc';
-  src: url('assets/fonts/Minecraft.ttf') format('truetype');
-}
-@font-face {
   font-family: 'fnt_m6x11plus';
   src: url('assets/fonts/m6x11plus.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'fnt_m5x7';
+  src: url('assets/fonts/m5x7.ttf') format('truetype');
 }
 
 html, body {
@@ -34,6 +34,16 @@ body::before {
 body.change-bg::before {
   opacity: 0;
 }
+
+/*
+body {
+  cursor: url('assets/gifs/cursors/gif_idle_cursor.gif'), auto;
+}
+
+a:hover {
+  cursor: url('assets/gifs/gif_soonJAM.gif'), pointer;
+}
+*/
 
 body > img,
 h1,
